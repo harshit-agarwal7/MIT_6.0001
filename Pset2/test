@@ -1,0 +1,16 @@
+def match_with_gaps(my_word, other_word):
+    flag = True
+    my_word.replace(' ', '')
+    if len(my_word) != len(other_word):
+        flag = False
+    else:
+        for i in range(0, len(my_word)):
+            if my_word[i] == '_':
+                flag = True
+            else:
+                if my_word[i] != other_word[i]:
+                    flag = False
+                    break
+    return flag
+print match_with_gaps('c_ t', 'cat')
+
